@@ -1,6 +1,8 @@
 package com.example.typemaster.GameLogic;
 
+import com.example.typemaster.Front;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -15,11 +17,14 @@ public class Score{
         pane.setMinSize(100,50);
         pane.setLayoutX(100);
         pane.setLayoutY(43);
-
         text_score.setText(String.valueOf(score));
         text_score.setLayoutY(0);
         text_score.setLayoutX(0);
-        text_score.setFont(Font.font("Bookman", 28));
+        text_score.setFont(Font.font("STXihei", 28));
+        if(Front.theme == 2){
+            text_score.setFill(Color.WHITE);
+        }
+
         pane.getChildren().remove(text_score);
         pane.getChildren().add(text_score);
         return pane;

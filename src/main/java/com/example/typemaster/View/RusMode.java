@@ -6,12 +6,12 @@ import com.example.typemaster.GameLogic.TimeCounter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 public class RusMode {
     public static Pane paneRus_Board;
     public static Text RusText;
@@ -38,8 +38,10 @@ public class RusMode {
         RusText = new Text();
         RusText.setLayoutY(280);
         RusText.setLayoutX(500);
-        RusText.setFont(Font.font("Bookman", 28));
-
+        RusText.setFont(Font.font("STXihei", 28));
+        if(Front.theme == 2) {
+            RusText.setFill(Color.WHITE);
+        }
         pane.getChildren().add(front);
         pane.getChildren().addAll(paneRus_Board, RusText,timePane, scorePane);
         return pane;

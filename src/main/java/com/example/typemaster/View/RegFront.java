@@ -69,6 +69,11 @@ public class RegFront {
         passwordField2.setLayoutY(532);
         passwordField2.setFont(Font.font("STXihei", 20));
         pane.getChildren().add(passwordField2);
+        if(Front.theme == 2){
+            passwordField2.setStyle("-fx-text-fill: rgb(129, 127, 127);");
+            passwordField.setStyle("-fx-text-fill: rgb(129, 127, 127);");
+            input_login.setStyle("-fx-text-fill: rgb(129, 127, 127);");
+        }
 
         reg = new Button();
         reg.setBackground(null);

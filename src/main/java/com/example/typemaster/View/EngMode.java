@@ -6,6 +6,7 @@ import com.example.typemaster.GameLogic.TimeCounter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -40,6 +41,9 @@ public class EngMode {
         EngText.setLayoutY(280);
         EngText.setLayoutX(500);
         EngText.setFont(Font.font("Bookman", 28));
+        if(Front.theme == 2) {
+            EngText.setFill(Color.WHITE);
+        }
         pane.getChildren().addAll(paneEng_Board, EngText,timePane, scorePane);
 
         return pane;

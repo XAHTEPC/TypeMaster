@@ -1,5 +1,6 @@
 package com.example.typemaster.GameLogic;
 
+import com.example.typemaster.Front;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.control.Label;
@@ -16,6 +17,8 @@ public class Toast {
         final Popup popup = new Popup();
         popup.setAutoFix(true);
         Label label = new Label(message);
+        if(Front.theme==2)
+            label.setStyle("-fx-text-fill: rgb(129, 127, 127);");
         label.setFont(Font.font("STXihei", 20));
         popup.getContent().add(label);
         return  popup;

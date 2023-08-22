@@ -41,6 +41,8 @@ public class GameRus {
         kol = 0;
         str = word.toCharArray();
         RusMode.RusText.setText(word);
+        if(Front.theme == 2)
+            RusMode.RusText.setStyle("-fx-text-fill: white;");
         rectangle = RusBoard.getRect(str[0]);
         RusMode.paneRus_Board.getChildren().add(rectangle);
         rectangle.setFill(null);

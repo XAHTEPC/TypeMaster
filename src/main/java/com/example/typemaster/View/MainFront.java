@@ -97,6 +97,7 @@ public class MainFront {
         });
 
         Button exit = new Button();
+        exit.setBackground(null);
         exit.setMaxSize(200,75);
         exit.setMinSize(200,75);
         exit.setLayoutY(716);

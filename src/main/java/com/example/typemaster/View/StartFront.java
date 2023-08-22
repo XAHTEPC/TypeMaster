@@ -55,6 +55,10 @@ public class StartFront {
         passwordField.setLayoutY(477);
         passwordField.setFont(Font.font("STXihei", 20));
         pane.getChildren().add(passwordField);
+        if(Front.theme == 2){
+            passwordField.setStyle("-fx-text-fill: rgb(129, 127, 127);");
+            input_login.setStyle("-fx-text-fill: rgb(129, 127, 127);");
+        }
 
         enter = new Button();
         enter.setBackground(null);

@@ -7,7 +7,6 @@ import com.example.typemaster.View.*;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -34,24 +33,6 @@ public class Front extends Application {
         stage.initStyle(StageStyle.DECORATED);
         pane = StartFront.getStartFront();
         root.getChildren().add(pane);
-
-//        enter_start.setOnAction(t1 ->{
-//            try {
-//                if(login())
-//                    mainMenu();
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
-//
-//        reg_start.setOnAction(t1 ->{
-//             try {
-//                registration();
-//            } catch (FileNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
-
         stage.setTitle("Project");
         stage.setScene(scene);
         stage.show();
@@ -70,7 +51,6 @@ public class Front extends Application {
     public static boolean login() throws SQLException {
         login = StartFront.input_login.getText();
         password = StartFront.passwordField.getText();
-//        Postgre postgre = new Postgre();
         byte[] salt = new byte[3];
         password = Crypto.hash(password,salt);
         id = Postgre.getID(login,password);
@@ -83,7 +63,7 @@ public class Front extends Application {
             return true;
         }
     }
-    public static void mainMenu(){
+    public static void mainMenu() {
         root.getChildren().removeAll(pane);
         try {
             pane = MainFront.getStartFront();
@@ -91,18 +71,6 @@ public class Front extends Application {
             throw new RuntimeException(e);
         }
         root.getChildren().add(pane);
-//        MainFront.RusChar.setOnAction(t2->{
-//            startRus();
-//        });
-//        MainFront.EngChar.setOnAction(t2->{
-//            startEng();
-//        });
-//        MainFront.Text.setOnAction(t2->{
-//            startText();
-//        });
-//        MainFront.Result.setOnAction(t2->{
-//            result();
-//        });
     }
     public static void startRus(){
         TimeCounter.time[0] = 60;

@@ -1,8 +1,10 @@
 package com.example.typemaster.GameLogic;
 
+import com.example.typemaster.Front;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -24,11 +26,16 @@ public class TimeCounter {
         text_time.setLayoutY(0);
         text_time.setLayoutX(0);
         text_time.setFont(Font.font("Bookman", 28));
+        if(Front.theme == 2){
+            text_time.setFill(Color.WHITE);
+        }
         pane.getChildren().remove(text_time);
         pane.getChildren().add(text_time);
         return pane;
     }
     public static void startTimer() throws InterruptedException {
+        if(Front.theme == 2)
+            text_time.setStyle("-fx-text-fill: white;");
         timeline = new Timeline(new KeyFrame(
                 Duration.seconds(1), actionEvent -> {
             if(time[0]<1) {
@@ -39,7 +46,6 @@ public class TimeCounter {
                 time[0]--;
                 text_time.setText(" " + time[0]);
             }
-            System.out.println(time[0]);
         }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
